@@ -1,0 +1,77 @@
+@import './breakpoints/breakpoints.scss';
+
+$orange: #ff9b54;
+$purple: #ae76a6;
+$blue: #a3c3d9;
+$light-orange: #f8bd7f;
+$grey: #efefef;
+
+// Main Colors !need to make it into a system 
+// later export them into separate file only for colors
+$background-dark: #040404;
+$background-light: #B2B6D5;
+$accent-dark: #575764;
+$accent-light: #E5E5E5;
+$accent-gold: #DAA522;
+$accent-purple: #464898;
+$accent-purple: #DD1D11; 
+
+* {
+  box-sizing: border-box;
+}
+html, 
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0; 
+}
+body {
+  background: $background-dark;
+  position: fixed;
+}
+.layer {
+  font-family: 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  height: 70vh;
+  background: #408593;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+
+  @include media('<=phone') {
+    background-color: $orange;
+    &:before {
+      content: 'Phone viewport'
+    }
+  }
+
+  @include media('>phone', '<=456px') {
+    background-color: $blue;
+    &:before {
+      content: 'Large phone viewport'
+    }
+  }
+
+  @include media('>=456px', '<tablet') {
+    background-color: $grey;
+    &:before {
+      content: 'Tablet viewport'
+    }
+  }
+
+  @include media('>tablet', '<desktop') {
+    background-color: $purple;
+    &:before {
+      content: 'Grater than tablet smaller then desktop viewport'
+    }
+  }
+
+  $media-expressions: (screen: "screen", 
+                    handheld: "handheld",
+                    retina2x: 
+                    ("(-webkit-min-device-pixel-ratio: 2)", 
+                    "(min-resolution: 192dpi)")) !default;
+}
