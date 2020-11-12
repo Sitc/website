@@ -44,28 +44,28 @@ body {
   @include media('<=phone') {
     background-color: $orange;
     &:before {
-      content: 'Phone viewport'
+    content: 'Phone viewport'
     }
   }
 
   @include media('>phone', '<=456px') {
     background-color: $blue;
     &:before {
-      content: 'Large phone viewport'
+    content: 'Large phone viewport'
     }
   }
 
   @include media('>=456px', '<tablet') {
     background-color: $grey;
     &:before {
-      content: 'Tablet viewport'
+    content: 'Tablet viewport'
     }
   }
 
   @include media('>tablet', '<desktop') {
     background-color: $purple;
     &:before {
-      content: 'Grater than tablet smaller then desktop viewport'
+    content: 'Grater than tablet smaller then desktop viewport'
     }
   }
 
